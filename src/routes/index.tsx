@@ -512,9 +512,11 @@ function Index() {
               <p className="eyebrow text-accent">You</p>
               <h3 className="mt-4 text-2xl">Prepare for interviews.</h3>
               <p className="mt-3 text-sm leading-relaxed opacity-75">
-                Stay available, stay responsive, and put your energy into the
-                conversations that decide the offer.
+                Stay available, stay responsive, and walk into every interview
+                prepared.
               </p>
+              <p className="eyebrow mt-6 text-accent">That's it</p>
+
             </div>
             <div className="rounded-2xl border border-ink-foreground/20 p-8">
               <p className="eyebrow text-accent">We</p>
