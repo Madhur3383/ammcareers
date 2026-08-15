@@ -246,14 +246,12 @@ function Index() {
               <ShieldCheck className="h-4 w-4 text-accent" />
               Managed job search service
             </p>
-            <h1 className="mt-5 text-4xl leading-[1.05] md:text-6xl">
-              Stop searching. Start preparing.
+            <h1 className="mt-5 text-4xl leading-[1.05] md:text-5xl">
+              We don't simply give career advice. We manage your job search for you.
             </h1>
             <p className="mt-4 font-display text-xl text-muted-foreground md:text-2xl">
-              We handle your job search. You prepare for the interview.
-            </p>
-            <p className="mt-3 text-lg font-semibold text-accent-foreground md:text-xl">
-              We don't simply give career advice. We manage your job search for you.
+              Stop searching. Start preparing. We handle your job search — you prepare
+              for the interview.
             </p>
             <p className="mt-6 max-w-xl text-lg text-muted-foreground">
               From LinkedIn optimization and ATS-friendly resumes to targeted
