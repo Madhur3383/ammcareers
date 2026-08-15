@@ -339,6 +339,50 @@ function Index() {
           </p>
         </section>
 
+        {/* The difference */}
+        <section className="mx-auto max-w-6xl px-4 py-16 sm:px-6 md:py-24">
+          <div className="grid gap-10 md:grid-cols-2 md:gap-14">
+            <div>
+              <p className="eyebrow text-muted-foreground">The difference</p>
+              <h2 className="mt-4 text-3xl leading-tight md:text-4xl">
+                We don't simply give career advice. We manage your job search for you.
+              </h2>
+              <p className="mt-6 text-lg leading-relaxed text-muted-foreground">
+                Most services hand you a document and a checklist. We run the search
+                as a service: finding the right opportunities, optimizing your resume
+                and LinkedIn, applying to jobs, reaching recruiters, pursuing referrals
+                and tracking your progress — end to end.
+              </p>
+            </div>
+            <div className="space-y-6">
+              {[
+                [
+                  "Built for working professionals",
+                  "You cannot run a serious search between meetings. We can.",
+                ],
+                [
+                  "Targeted, never random",
+                  "Every application is matched to your role, skills and expectations.",
+                ],
+                [
+                  "Positioning, not padding",
+                  "Your resume and LinkedIn are rewritten to say what hiring teams need to read.",
+                ],
+                [
+                  "Accountable by default",
+                  "A weekly report shows exactly what was done and what comes next.",
+                ],
+              ].map(([title, body]) => (
+                <div key={title} className="border-l-2 border-accent pl-5">
+                  <h3 className="text-lg">{title}</h3>
+                  <p className="mt-1.5 leading-relaxed text-muted-foreground">{body}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+
         {/* Services */}
         <section id="services" className="mx-auto max-w-6xl px-4 py-16 sm:px-6 md:py-24">
           <p className="eyebrow text-muted-foreground">What we do</p>
