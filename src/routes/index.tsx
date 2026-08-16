@@ -339,6 +339,28 @@ function Index() {
           </p>
         </section>
 
+        {/* Services */}
+        <section id="services" className="mx-auto max-w-6xl px-4 py-16 sm:px-6 md:py-24">
+          <p className="eyebrow text-muted-foreground">What we do</p>
+          <h2 className="mt-3 max-w-2xl text-3xl md:text-4xl">
+            End-to-end job search management.
+          </h2>
+          <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {services.map(({ icon: Icon, title, body }) => (
+              <article
+                key={title}
+                className="rounded-2xl border border-border bg-card p-7 shadow-soft transition-transform hover:-translate-y-1"
+              >
+                <span className="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-accent/20 text-accent-foreground">
+                  <Icon className="h-5 w-5" />
+                </span>
+                <h3 className="mt-5 text-lg">{title}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{body}</p>
+              </article>
+            ))}
+          </div>
+        </section>
+
         {/* The difference */}
         <section className="mx-auto max-w-6xl px-4 py-16 sm:px-6 md:py-24">
           <div className="grid gap-10 md:grid-cols-2 md:gap-14">
@@ -382,29 +404,6 @@ function Index() {
           </div>
         </section>
 
-
-        {/* Services */}
-        <section id="services" className="mx-auto max-w-6xl px-4 py-16 sm:px-6 md:py-24">
-          <p className="eyebrow text-muted-foreground">What we do</p>
-          <h2 className="mt-3 max-w-2xl text-3xl md:text-4xl">
-            End-to-end job search management.
-          </h2>
-          <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {services.map(({ icon: Icon, title, body }) => (
-              <article
-                key={title}
-                className="rounded-2xl border border-border bg-card p-7 shadow-soft transition-transform hover:-translate-y-1"
-              >
-                <span className="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-accent/20 text-accent-foreground">
-                  <Icon className="h-5 w-5" />
-                </span>
-                <h3 className="mt-5 text-lg">{title}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{body}</p>
-              </article>
-            ))}
-          </div>
-        </section>
-
         {/* Process */}
         <section id="process" className="surface-ink">
           <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6 md:py-24">
@@ -418,38 +417,6 @@ function Index() {
                   <span className="font-display text-sm text-accent">{s.n}</span>
                   <h3 className="mt-3 text-lg">{s.title}</h3>
                   <p className="mt-2 text-sm leading-relaxed opacity-75">{s.body}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Daily target */}
-        <section className="mx-auto max-w-6xl px-4 py-16 sm:px-6 md:py-24">
-          <div className="grid items-center gap-10 rounded-3xl border border-border bg-card p-8 shadow-soft md:grid-cols-2 md:p-14">
-            <div>
-              <p className="eyebrow text-muted-foreground">Daily application target</p>
-              <h2 className="mt-3 text-3xl md:text-4xl">Up to 25 applications every day.</h2>
-              <p className="mt-4 text-muted-foreground">
-                We continuously search for relevant opportunities and submit targeted
-                applications across major job boards and company career pages.
-              </p>
-              <p className="mt-4 text-sm text-muted-foreground">
-                Every application is matched to your CV, experience, skills, desired
-                role, location, salary expectations and the job requirements — never
-                bulk, untargeted submissions.
-              </p>
-            </div>
-            <div className="grid grid-cols-2 gap-4">
-              {[
-                ["25", "Applications / day"],
-                ["175", "Applications / week"],
-                ["7", "Days of active search"],
-                ["3+", "Interviews / month target"],
-              ].map(([n, l]) => (
-                <div key={l} className="rounded-2xl border border-border bg-background p-6">
-                  <p className="font-display text-3xl font-semibold">{n}</p>
-                  <p className="mt-1 text-xs text-muted-foreground">{l}</p>
                 </div>
               ))}
             </div>
@@ -485,6 +452,38 @@ function Index() {
                   </li>
                 ))}
               </ul>
+            </div>
+          </div>
+        </section>
+
+        {/* Daily target */}
+        <section className="mx-auto max-w-6xl px-4 py-16 sm:px-6 md:py-24">
+          <div className="grid items-center gap-10 rounded-3xl border border-border bg-card p-8 shadow-soft md:grid-cols-2 md:p-14">
+            <div>
+              <p className="eyebrow text-muted-foreground">Daily application target</p>
+              <h2 className="mt-3 text-3xl md:text-4xl">Up to 25 applications every day.</h2>
+              <p className="mt-4 text-muted-foreground">
+                We continuously search for relevant opportunities and submit targeted
+                applications across major job boards and company career pages.
+              </p>
+              <p className="mt-4 text-sm text-muted-foreground">
+                Every application is matched to your CV, experience, skills, desired
+                role, location, salary expectations and the job requirements — never
+                bulk, untargeted submissions.
+              </p>
+            </div>
+            <div className="grid grid-cols-2 gap-4">
+              {[
+                ["25", "Applications / day"],
+                ["175", "Applications / week"],
+                ["7", "Days of active search"],
+                ["3+", "Interviews / month target"],
+              ].map(([n, l]) => (
+                <div key={l} className="rounded-2xl border border-border bg-background p-6">
+                  <p className="font-display text-3xl font-semibold">{n}</p>
+                  <p className="mt-1 text-xs text-muted-foreground">{l}</p>
+                </div>
+              ))}
             </div>
           </div>
         </section>
