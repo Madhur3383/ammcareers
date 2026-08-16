@@ -60,12 +60,12 @@ const services = [
   {
     icon: Globe2,
     title: "Job search across platforms",
-    body: "We search LinkedIn, Naukri, Indeed, Glassdoor, Foundit, company career pages and other relevant hiring platforms.",
+    body: "We search and apply across Naukri, Instahyre, IIMjobs, NaukriGulf, LinkedIn and company career pages.",
   },
   {
     icon: Send,
     title: "Job applications",
-    body: "Up to 25 relevant applications every day, targeted to your CV, experience, skills, desired role, location, salary and job requirements.",
+    body: "20+ quality applications every day, each targeted to your CV, experience, skills, desired role, location, salary and the job requirements — never bulk or untargeted.",
   },
   {
     icon: MessagesSquare,
@@ -159,10 +159,12 @@ const weDo = [
 
 const planFeatures = [
   "Full job search management",
-  "Up to 25 targeted applications per day",
+  "20+ quality applications per day",
+  "CV tailored to every job description",
+  "Applications across Naukri, Instahyre, IIMjobs, NaukriGulf, LinkedIn & company career pages",
   "LinkedIn profile optimization",
-  "ATS-friendly CV rewrite + JD-based versions",
-  "Recruiter & HR outreach",
+  "Daily LinkedIn & Naukri profile updates for more recruiter views",
+  "Follow-up with HR & recruiters on every application",
   "Referral and hiring network support",
   "Professional portfolio & cover letters",
   "Weekly job search report",
@@ -176,7 +178,7 @@ const faqs = [
   },
   {
     q: "How many jobs do you apply to?",
-    a: "We target up to 25 relevant applications per day, depending on the availability of suitable roles and your profile.",
+    a: "We submit 20+ quality applications per day, each matched to your CV and the job requirements — not bulk or random submissions.",
   },
   {
     q: "Do you customize my resume?",
@@ -274,7 +276,7 @@ function Index() {
             </div>
             <dl className="mt-12 grid grid-cols-2 gap-6 border-t border-border pt-8 sm:grid-cols-4">
               {[
-                ["25", "Targeted applications / day"],
+                ["20+", "Quality applications / day"],
                 ["3+", "Interview opportunities / month"],
                 ["7", "Days of continuous job search"],
                 ["100%", "Managed job search"],
@@ -305,11 +307,10 @@ function Index() {
             {[
               "LinkedIn",
               "Naukri",
-              "Indeed",
-              "Glassdoor",
-              "Foundit",
+              "Instahyre",
+              "IIMjobs",
+              "NaukriGulf",
               "Company career pages",
-              "Other hiring platforms",
             ].map((p) => (
               <span key={p}>{p}</span>
             ))}
