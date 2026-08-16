@@ -462,21 +462,23 @@ function Index() {
           <div className="grid items-center gap-10 rounded-3xl border border-border bg-card p-8 shadow-soft md:grid-cols-2 md:p-14">
             <div>
               <p className="eyebrow text-muted-foreground">Daily application target</p>
-              <h2 className="mt-3 text-3xl md:text-4xl">Up to 25 applications every day.</h2>
+              <h2 className="mt-3 text-3xl md:text-4xl">20+ quality applications every day.</h2>
               <p className="mt-4 text-muted-foreground">
                 We continuously search for relevant opportunities and submit targeted
-                applications across major job boards and company career pages.
+                applications across Naukri, Instahyre, IIMjobs, NaukriGulf, LinkedIn and
+                company career pages.
               </p>
               <p className="mt-4 text-sm text-muted-foreground">
                 Every application is matched to your CV, experience, skills, desired
-                role, location, salary expectations and the job requirements — never
-                bulk, untargeted submissions.
+                role, location, salary expectations and the job requirements. We also
+                update your LinkedIn and Naukri profiles daily so recruiters find you
+                faster, and follow up with HR on every application.
               </p>
             </div>
             <div className="grid grid-cols-2 gap-4">
               {[
-                ["25", "Applications / day"],
-                ["175", "Applications / week"],
+                ["20+", "Quality applications / day"],
+                ["140+", "Applications / week"],
                 ["7", "Days of active search"],
                 ["3+", "Interviews / month target"],
               ].map(([n, l]) => (
@@ -558,42 +560,74 @@ function Index() {
 
         {/* Pricing */}
         <section id="pricing" className="border-y border-border bg-secondary/50">
-          <div className="mx-auto max-w-3xl px-4 py-16 sm:px-6 md:py-24">
+          <div className="mx-auto max-w-5xl px-4 py-16 sm:px-6 md:py-24">
             <p className="eyebrow text-center text-muted-foreground">Pricing</p>
             <h2 className="mt-3 text-center text-3xl md:text-4xl">
-              One plan. Your entire job search, managed.
+              Your entire job search, managed.
             </h2>
-            <div className="mt-10 rounded-3xl border border-accent bg-card p-8 shadow-lift md:p-12">
-              <div className="flex flex-wrap items-end justify-between gap-4">
-                <div>
-                  <h3 className="text-xl">Managed job search</h3>
-                  <p className="mt-3 font-display text-4xl font-semibold md:text-5xl">
-                    ₹3,999
-                    <span className="ml-2 text-sm font-normal text-muted-foreground">
-                      / month
-                    </span>
-                  </p>
-                </div>
-                <span className="eyebrow rounded-full bg-accent px-3 py-1 text-gold-foreground">
-                  Flexible & negotiable
-                </span>
+            <p className="mx-auto mt-4 max-w-2xl text-center text-muted-foreground">
+              One service. Two durations. Includes CV tailoring to every job description,
+              applications across all major portals, HR follow-up and daily profile
+              updates — so recruiters find you faster.
+            </p>
+            <div className="mt-12 grid gap-6 md:grid-cols-2">
+              {/* 1-month plan */}
+              <div className="rounded-3xl border border-border bg-card p-8 shadow-soft md:p-10">
+                <h3 className="text-xl">1 Month</h3>
+                <p className="mt-3 font-display text-4xl font-semibold md:text-5xl">
+                  ₹15,000
+                </p>
+                <p className="mt-2 text-sm text-muted-foreground">
+                  For a focused, fast job search.
+                </p>
+                <ul className="mt-6 grid gap-3 text-sm">
+                  {planFeatures.map((f) => (
+                    <li key={f} className="flex gap-3 text-muted-foreground">
+                      <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-accent" />
+                      {f}
+                    </li>
+                  ))}
+                </ul>
+                <a
+                  href="#contact"
+                  className="mt-9 inline-flex w-full items-center justify-center gap-2 rounded-full border border-border px-6 py-3.5 text-sm font-semibold transition-colors hover:bg-secondary"
+                >
+                  Start for 1 month
+                  <ArrowRight className="h-4 w-4" />
+                </a>
               </div>
-              <ul className="mt-8 grid gap-3 text-sm sm:grid-cols-2">
-                {planFeatures.map((f) => (
-                  <li key={f} className="flex gap-3 text-muted-foreground">
-                    <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-accent" />
-                    {f}
-                  </li>
-                ))}
-              </ul>
-              <a
-                href="#contact"
-                className="mt-9 inline-flex w-full items-center justify-center gap-2 rounded-full bg-primary px-6 py-3.5 text-sm font-semibold text-primary-foreground transition-transform hover:-translate-y-0.5"
-              >
-                Let us handle your job search
-                <ArrowRight className="h-4 w-4" />
-              </a>
+              {/* 3-month plan */}
+              <div className="relative rounded-3xl border border-accent bg-card p-8 shadow-lift md:p-10">
+                <span className="absolute right-6 top-6 eyebrow rounded-full bg-accent px-3 py-1 text-gold-foreground">
+                  Best value
+                </span>
+                <h3 className="text-xl">3 Months</h3>
+                <p className="mt-3 font-display text-4xl font-semibold md:text-5xl">
+                  ₹35,000
+                </p>
+                <p className="mt-2 text-sm text-muted-foreground">
+                  Save ₹10,000 vs. the monthly rate.
+                </p>
+                <ul className="mt-6 grid gap-3 text-sm">
+                  {planFeatures.map((f) => (
+                    <li key={f} className="flex gap-3 text-muted-foreground">
+                      <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-accent" />
+                      {f}
+                    </li>
+                  ))}
+                </ul>
+                <a
+                  href="#contact"
+                  className="mt-9 inline-flex w-full items-center justify-center gap-2 rounded-full bg-primary px-6 py-3.5 text-sm font-semibold text-primary-foreground transition-transform hover:-translate-y-0.5"
+                >
+                  Let us handle your job search
+                  <ArrowRight className="h-4 w-4" />
+                </a>
+              </div>
             </div>
+            <p className="mt-8 text-center text-sm text-muted-foreground">
+              Prices are flexible and negotiable based on your requirements.
+            </p>
           </div>
         </section>
 
