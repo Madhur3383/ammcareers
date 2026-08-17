@@ -268,12 +268,12 @@ function Index() {
                 Start your job search
                 <ArrowRight className="h-4 w-4" />
               </a>
-              <a
-                href="#contact"
+              <Link
+                to="/book-a-consultation"
                 className="inline-flex items-center gap-2 rounded-full border border-border px-6 py-3.5 text-sm font-semibold transition-colors hover:bg-secondary sm:px-7"
               >
                 Book a consultation
-              </a>
+              </Link>
             </div>
             <dl className="mt-12 grid grid-cols-2 gap-6 border-t border-border pt-8 sm:grid-cols-4">
               {[
