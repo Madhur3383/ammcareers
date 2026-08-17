@@ -191,3 +191,25 @@
   font-weight: 600;
 }
 
+@utility input-base {
+  width: 100%;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border);
+  background-color: var(--color-background);
+  padding: 0.625rem 0.875rem;
+  font-size: 0.95rem;
+  color: var(--color-foreground);
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+@utility input-base {
+  &:focus {
+    outline: none;
+    border-color: var(--color-accent);
+    box-shadow: 0 0 0 3px oklch(0.78 0.14 72 / 0.2);
+  }
+  &::placeholder {
+    color: var(--color-muted-foreground);
+  }
+}
+
