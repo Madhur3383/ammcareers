@@ -5,7 +5,9 @@ import {
   CalendarClock,
   CheckCircle2,
   Mail,
+  Paperclip,
   ShieldCheck,
+
   Target,
   UserRound,
 } from "lucide-react";
