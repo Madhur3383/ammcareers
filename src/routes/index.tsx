@@ -9,6 +9,7 @@ import {
   Handshake,
   LineChart,
   Linkedin,
+  KeyRound,
   Mail,
   MessagesSquare,
   PenLine,
@@ -556,6 +557,74 @@ function Index() {
             handle the process while you focus on preparing for the opportunities that
             matter.
           </p>
+        </section>
+
+        {/* Credentials safe */}
+        <section className="surface-ink">
+          <div className="mx-auto grid max-w-6xl items-center gap-12 px-4 py-16 sm:px-6 md:grid-cols-2 md:py-24">
+            <div>
+              <p className="eyebrow text-accent">Your credentials stay safe</p>
+              <h2 className="mt-4 text-3xl leading-tight md:text-4xl">
+                Trusted with your accounts. Your passwords are never misused.
+              </h2>
+              <p className="mt-6 max-w-xl text-lg leading-relaxed opacity-80">
+                To run your job search end to end, we work with your LinkedIn, Naukri,
+                Instahyre, IIMjobs, NaukriGulf and other career-platform accounts on your
+                behalf. We treat that access as a privilege — not a right.
+              </p>
+              <p className="mt-4 max-w-xl leading-relaxed opacity-75">
+                Login credentials are stored securely, shared only with the team members
+                actively working on your search, and used solely to apply, follow up and
+                keep your profiles active. We never post, message or change anything you
+                haven't approved, and you retain full ownership of every account.
+              </p>
+              <div className="mt-8 inline-flex items-center gap-3 rounded-full border border-accent/40 bg-accent/10 px-5 py-2.5">
+                <ShieldCheck className="h-4 w-4 text-accent" />
+                <span className="text-sm font-semibold">
+                  Guaranteed: your credentials stay private and protected.
+                </span>
+              </div>
+            </div>
+            <div className="grid gap-4 sm:grid-cols-2">
+              {[
+                [
+                  "LinkedIn",
+                  "Profile updates, applications and recruiter outreach only.",
+                ],
+                [
+                  "Naukri",
+                  "Daily refresh and targeted applications, nothing else.",
+                ],
+                [
+                  "Instahyre",
+                  "Used only to apply to roles that fit your profile.",
+                ],
+                [
+                  "IIMjobs",
+                  "Applications submitted on your behalf, with your approval.",
+                ],
+                [
+                  "NaukriGulf",
+                  "Access limited to relevant Gulf-region openings.",
+                ],
+                [
+                  "Career pages",
+                  "Company portals handled with the same strict access rules.",
+                ],
+              ].map(([platform, detail]) => (
+                <div
+                  key={platform}
+                  className="rounded-2xl border border-ink-foreground/20 p-5"
+                >
+                  <div className="flex items-center gap-2">
+                    <KeyRound className="h-4 w-4 text-accent" />
+                    <h3 className="text-base font-semibold">{platform}</h3>
+                  </div>
+                  <p className="mt-2 text-sm leading-relaxed opacity-75">{detail}</p>
+                </div>
+              ))}
+            </div>
+          </div>
         </section>
 
         {/* Pricing */}
