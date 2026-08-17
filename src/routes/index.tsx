@@ -9,6 +9,7 @@ import {
   Handshake,
   LineChart,
   Linkedin,
+  Lock,
   Mail,
   MessagesSquare,
   PenLine,
