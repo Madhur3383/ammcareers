@@ -173,6 +173,13 @@ function BookConsultationPage() {
                     </a>
                     .
                   </p>
+                  {cvName && (
+                    <p className="mt-4 inline-flex items-center gap-2 rounded-full bg-accent/10 px-4 py-2 text-sm text-foreground">
+                      <Paperclip className="h-4 w-4 text-accent" />
+                      Don't forget to attach <strong>{cvName}</strong> to the email.
+                    </p>
+                  )}
+
                   <Link
                     to="/"
                     className="mt-8 inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3.5 text-sm font-semibold text-primary-foreground transition-transform hover:-translate-y-0.5"
