@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import {
   ArrowRight,
   BriefcaseBusiness,
@@ -268,12 +268,12 @@ function Index() {
                 Start your job search
                 <ArrowRight className="h-4 w-4" />
               </a>
-              <a
-                href="#contact"
+              <Link
+                to="/book-a-consultation"
                 className="inline-flex items-center gap-2 rounded-full border border-border px-6 py-3.5 text-sm font-semibold transition-colors hover:bg-secondary sm:px-7"
               >
                 Book a consultation
-              </a>
+              </Link>
             </div>
             <dl className="mt-12 grid grid-cols-2 gap-6 border-t border-border pt-8 sm:grid-cols-4">
               {[
@@ -738,12 +738,12 @@ function Index() {
                 <Mail className="h-4 w-4" />
                 contact.ammcareers@gmail.com
               </a>
-              <a
-                href="https://wa.me/10000000000"
+              <Link
+                to="/book-a-consultation"
                 className="inline-flex items-center gap-2 rounded-full border border-ink-foreground/30 px-6 py-3.5 text-sm font-semibold transition-colors hover:bg-ink-foreground/10 sm:px-7"
               >
                 Book a consultation
-              </a>
+              </Link>
             </div>
           </div>
         </section>
