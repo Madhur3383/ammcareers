@@ -9,7 +9,7 @@ import {
   Handshake,
   LineChart,
   Linkedin,
-  Lock,
+  KeyRound,
   Mail,
   MessagesSquare,
   PenLine,
@@ -617,7 +617,7 @@ function Index() {
                   className="rounded-2xl border border-ink-foreground/20 p-5"
                 >
                   <div className="flex items-center gap-2">
-                    <Lock className="h-4 w-4 text-accent" />
+                    <KeyRound className="h-4 w-4 text-accent" />
                     <h3 className="text-base font-semibold">{platform}</h3>
                   </div>
                   <p className="mt-2 text-sm leading-relaxed opacity-75">{detail}</p>
