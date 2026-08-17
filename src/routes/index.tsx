@@ -727,7 +727,7 @@ function Index() {
               Let us handle your job search.
             </h2>
             <p className="mx-auto mt-4 max-w-xl opacity-75">
-              Book a short consultation with our founder, Madhur Patel. We'll review your
+              Book a short consultation with the CareForge team. We'll review your
               CV, agree on target roles and start your search this week.
             </p>
             <div className="mt-9 flex flex-wrap items-center justify-center gap-4">
