@@ -5,7 +5,9 @@ import {
   CalendarClock,
   CheckCircle2,
   Mail,
+  Paperclip,
   ShieldCheck,
+
   Target,
   UserRound,
 } from "lucide-react";
@@ -52,6 +54,8 @@ const whatYouGet = [
 
 function BookConsultationPage() {
   const [submitted, setSubmitted] = useState(false);
+  const [cvName, setCvName] = useState<string | null>(null);
+
 
   function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -169,6 +173,13 @@ function BookConsultationPage() {
                     </a>
                     .
                   </p>
+                  {cvName && (
+                    <p className="mt-4 inline-flex items-center gap-2 rounded-full bg-accent/10 px-4 py-2 text-sm text-foreground">
+                      <Paperclip className="h-4 w-4 text-accent" />
+                      Don't forget to attach <strong>{cvName}</strong> to the email.
+                    </p>
+                  )}
+
                   <Link
                     to="/"
                     className="mt-8 inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3.5 text-sm font-semibold text-primary-foreground transition-transform hover:-translate-y-0.5"
@@ -273,6 +284,26 @@ function BookConsultationPage() {
                       className="input-base resize-none"
                     />
                   </Field>
+
+                  <Field label="Attach your CV (optional)" htmlFor="cv">
+                    <div className="rounded-xl border border-dashed border-border bg-muted/30 p-4">
+                      <input
+                        id="cv"
+                        name="cv"
+                        type="file"
+                        accept=".pdf,.doc,.docx,.rtf,.txt"
+                        onChange={(e) => setCvName(e.target.files?.[0]?.name ?? null)}
+                        className="block w-full text-sm text-muted-foreground file:mr-4 file:rounded-full file:border-0 file:bg-primary file:px-4 file:py-2 file:text-sm file:font-semibold file:text-primary-foreground hover:file:opacity-90"
+                      />
+                      <p className="mt-2 flex items-start gap-2 text-xs text-muted-foreground">
+                        <Paperclip className="mt-0.5 h-3.5 w-3.5 shrink-0 text-accent" />
+                        {cvName
+                          ? `Selected: ${cvName} — please attach this file to the email that opens.`
+                          : "PDF or Word, up to 10MB. Your email app will open — attach the file there before sending."}
+                      </p>
+                    </div>
+                  </Field>
+
 
                   <button
                     type="submit"
