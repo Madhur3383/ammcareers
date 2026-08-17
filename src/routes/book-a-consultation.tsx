@@ -52,6 +52,8 @@ const whatYouGet = [
 
 function BookConsultationPage() {
   const [submitted, setSubmitted] = useState(false);
+  const [cvName, setCvName] = useState<string | null>(null);
+
 
   function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
