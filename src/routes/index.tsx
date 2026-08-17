@@ -558,6 +558,69 @@ function Index() {
           </p>
         </section>
 
+        {/* Credentials safety */}
+        <section className="surface-ink">
+          <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6 md:py-24">
+            <div className="grid items-center gap-12 md:grid-cols-2">
+              <div>
+                <p className="eyebrow text-accent-foreground/70">Your data is safe with us</p>
+                <h2 className="mt-3 text-3xl md:text-4xl">
+                  Your credentials stay private, encrypted and protected.
+                </h2>
+                <p className="mt-5 text-lg text-muted-foreground">
+                  To manage your job search, we work with your LinkedIn and job-board
+                  accounts. We treat that access with the seriousness it deserves — your
+                  passwords and login details are never shared, sold or misused.
+                </p>
+                <div className="mt-8 rounded-2xl border border-border/30 bg-card/5 p-5">
+                  <p className="flex items-center gap-2 font-display text-lg font-semibold">
+                    <ShieldCheck className="h-5 w-5 text-accent" />
+                    Our safety guarantee
+                  </p>
+                  <p className="mt-2 text-sm text-muted-foreground">
+                    We guarantee your LinkedIn and job-board credentials are handled
+                    confidentially and used only to run your job search. Access is limited
+                    to the team member managing your account, and you can revoke it anytime.
+                  </p>
+                </div>
+              </div>
+              <div className="grid gap-4 sm:grid-cols-2">
+                {[
+                  {
+                    icon: ShieldCheck,
+                    title: "Confidential by default",
+                    body: "Your LinkedIn and job-board passwords are stored securely and never shared with third parties.",
+                  },
+                  {
+                    icon: Lock,
+                    title: "Encrypted access",
+                    body: "Login details are handled through protected, access-controlled channels — not open messages or email.",
+                  },
+                  {
+                    icon: UserRound,
+                    title: "Restricted to your manager",
+                    body: "Only the team member running your search accesses your accounts. No wider visibility, ever.",
+                  },
+                  {
+                    icon: CheckCircle2,
+                    title: "You stay in control",
+                    body: "You can update or revoke access at any time. Your accounts remain yours, always.",
+                  },
+                ].map((s) => (
+                  <div
+                    key={s.title}
+                    className="rounded-2xl border border-border/30 bg-card/5 p-5"
+                  >
+                    <s.icon className="h-5 w-5 text-accent" />
+                    <p className="mt-3 font-display text-base font-semibold">{s.title}</p>
+                    <p className="mt-1 text-sm text-muted-foreground">{s.body}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* Pricing */}
         <section id="pricing" className="border-y border-border bg-secondary/50">
           <div className="mx-auto max-w-5xl px-4 py-16 sm:px-6 md:py-24">
