@@ -23,13 +23,13 @@ import heroImage from "@/assets/hero.jpg";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "CareForge — We Manage Your Job Search End to End" },
+      { title: "AMM Careers — We Manage Your Job Search End to End" },
       {
         name: "description",
         content:
-          "CareForge manages your job search: LinkedIn and resume optimization, targeted daily applications, recruiter outreach, referral support and weekly progress reports.",
+          "AMM Careers manages your job search: LinkedIn and resume optimization, targeted daily applications, recruiter outreach, referral support and weekly progress reports.",
       },
-      { property: "og:title", content: "CareForge — Stop Searching. Start Preparing." },
+      { property: "og:title", content: "AMM Careers — Stop Searching. Start Preparing." },
       {
         property: "og:description",
         content:
@@ -727,7 +727,7 @@ function Index() {
               Let us handle your job search.
             </h2>
             <p className="mx-auto mt-4 max-w-xl opacity-75">
-              Book a short consultation with the CareForge team. We'll review your
+              Book a short consultation with the AMM Careers team. We'll review your
               CV, agree on target roles and start your search this week.
             </p>
             <div className="mt-9 flex flex-wrap items-center justify-center gap-4">
