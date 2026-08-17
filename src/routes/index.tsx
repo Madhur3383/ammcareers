@@ -738,12 +738,12 @@ function Index() {
                 <Mail className="h-4 w-4" />
                 contact.ammcareers@gmail.com
               </a>
-              <a
-                href="https://wa.me/10000000000"
+              <Link
+                to="/book-a-consultation"
                 className="inline-flex items-center gap-2 rounded-full border border-ink-foreground/30 px-6 py-3.5 text-sm font-semibold transition-colors hover:bg-ink-foreground/10 sm:px-7"
               >
                 Book a consultation
-              </a>
+              </Link>
             </div>
           </div>
         </section>
