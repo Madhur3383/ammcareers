@@ -23,13 +23,13 @@ import heroImage from "@/assets/hero.jpg";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "CareForge — We Manage Your Job Search End to End" },
+      { title: "AMM Careers — We Manage Your Job Search End to End" },
       {
         name: "description",
         content:
-          "CareForge manages your job search: LinkedIn and resume optimization, targeted daily applications, recruiter outreach, referral support and weekly progress reports.",
+          "AMM Careers manages your job search: LinkedIn and resume optimization, targeted daily applications, recruiter outreach, referral support and weekly progress reports.",
       },
-      { property: "og:title", content: "CareForge — Stop Searching. Start Preparing." },
+      { property: "og:title", content: "AMM Careers — Stop Searching. Start Preparing." },
       {
         property: "og:description",
         content:
@@ -213,7 +213,7 @@ function Index() {
       <header className="sticky top-0 z-40 border-b border-border/70 bg-background/85 backdrop-blur">
         <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-4 sm:px-6">
           <a href="#top" className="font-display text-lg font-semibold tracking-tight">
-            Care<span className="text-accent">Forge</span>
+            AMM<span className="text-accent"> Careers</span>
           </a>
           <nav className="hidden items-center gap-8 text-sm text-muted-foreground md:flex">
             <a href="#services" className="transition-colors hover:text-foreground">
@@ -727,16 +727,16 @@ function Index() {
               Let us handle your job search.
             </h2>
             <p className="mx-auto mt-4 max-w-xl opacity-75">
-              Book a short consultation with the CareForge team. We'll review your
+              Book a short consultation with the AMM Careers team. We'll review your
               CV, agree on target roles and start your search this week.
             </p>
             <div className="mt-9 flex flex-wrap items-center justify-center gap-4">
               <a
-                href="mailto:hello@careforge.co?subject=Start%20my%20job%20search"
+                href="mailto:contact.ammcareers@gmail.com?subject=Start%20my%20job%20search"
                 className="inline-flex items-center gap-2 rounded-full bg-accent px-6 py-3.5 text-sm font-semibold text-gold-foreground transition-transform hover:-translate-y-0.5 sm:px-7"
               >
                 <Mail className="h-4 w-4" />
-                hello@careforge.co
+                contact.ammcareers@gmail.com
               </a>
               <a
                 href="https://wa.me/10000000000"
@@ -752,9 +752,9 @@ function Index() {
       <footer className="border-t border-border">
         <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-3 px-4 py-8 text-center text-sm text-muted-foreground sm:px-6 md:flex-row md:text-left">
           <span className="font-display text-base font-semibold text-foreground">
-            Care<span className="text-accent">Forge</span>
+            AMM<span className="text-accent"> Careers</span>
           </span>
-          <span>© {new Date().getFullYear()} CareForge. Managed job search services.</span>
+          <span>© {new Date().getFullYear()} AMM Careers. Managed job search services.</span>
         </div>
       </footer>
     </div>
