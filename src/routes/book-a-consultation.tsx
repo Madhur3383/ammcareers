@@ -1,4 +1,8 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { useServerFn } from "@tanstack/react-start";
+
+import { submitConsultationRequest } from "@/lib/consultation.functions";
+
 import {
   ArrowLeft,
   BriefcaseBusiness,
