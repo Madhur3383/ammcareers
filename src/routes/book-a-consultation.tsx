@@ -158,18 +158,12 @@ function BookConsultationPage() {
                   <div className="flex h-16 w-16 items-center justify-center rounded-full bg-accent/15">
                     <Mail className="h-8 w-8 text-accent" />
                   </div>
-                  <h2 className="mt-6 text-2xl md:text-3xl">Your email is ready to send</h2>
+                  <h2 className="mt-6 text-2xl md:text-3xl">Request received</h2>
                   <p className="mt-3 max-w-md text-muted-foreground">
-                    Your email client should have opened with your consultation request
-                    pre-filled. If it didn't, email us directly at{" "}
-                    <a
-                      href="mailto:contact.ammcareers@gmail.com"
-                      className="font-medium text-accent underline-offset-4 hover:underline"
-                    >
-                      contact.ammcareers@gmail.com
-                    </a>
-                    .
+                    Thank you! Your consultation request has been received. Our team
+                    will contact you shortly.
                   </p>
+
                   <Link
                     to="/"
                     className="mt-8 inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3.5 text-sm font-semibold text-primary-foreground transition-transform hover:-translate-y-0.5"
