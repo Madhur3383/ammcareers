@@ -1,0 +1,1 @@
+delete from public.consultation_requests where email = 'test@example.com';

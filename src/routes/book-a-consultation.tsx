@@ -1,4 +1,8 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { useServerFn } from "@tanstack/react-start";
+
+import { submitConsultationRequest } from "@/lib/consultation.functions";
+
 import {
   ArrowLeft,
   BriefcaseBusiness,
@@ -52,42 +56,39 @@ const whatYouGet = [
 
 function BookConsultationPage() {
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+  const submit = useServerFn(submitConsultationRequest);
 
-  function handleSubmit(e: FormEvent<HTMLFormElement>) {
+  async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
     const form = e.currentTarget;
     const data = new FormData(form);
 
-    const name = String(data.get("name") || "").trim();
-    const email = String(data.get("email") || "").trim();
-    const phone = String(data.get("phone") || "").trim();
-    const role = String(data.get("role") || "").trim();
-    const experience = String(data.get("experience") || "").trim();
-    const duration = String(data.get("duration") || "").trim();
-    const locations = String(data.get("locations") || "").trim();
-    const message = String(data.get("message") || "").trim();
-
-    const subject = `Consultation request — ${name || "New candidate"}`;
-    const body = [
-      `Name: ${name}`,
-      `Email: ${email}`,
-      `Phone: ${phone}`,
-      `Target role: ${role}`,
-      `Experience: ${experience}`,
-      `Preferred plan: ${duration}`,
-      `Preferred locations: ${locations}`,
-      "",
-      "Details:",
-      message,
-    ].join("\n");
-
-    const mailto = `mailto:contact.ammcareers@gmail.com?subject=${encodeURIComponent(
-      subject,
-    )}&body=${encodeURIComponent(body)}`;
-
-    window.location.href = mailto;
-    setSubmitted(true);
+    setError(null);
+    setLoading(true);
+    try {
+      await submit({
+        data: {
+          name: String(data.get("name") || "").trim(),
+          email: String(data.get("email") || "").trim(),
+          phone: String(data.get("phone") || "").trim(),
+          role: String(data.get("role") || "").trim(),
+          experience: String(data.get("experience") || "").trim(),
+          duration: String(data.get("duration") || "").trim(),
+          locations: String(data.get("locations") || "").trim(),
+          message: String(data.get("message") || "").trim(),
+        },
+      });
+      setSubmitted(true);
+    } catch (err) {
+      console.error(err);
+      setError("Something went wrong while sending your request. Please try again.");
+    } finally {
+      setLoading(false);
+    }
   }
+
 
   return (
     <div className="min-h-screen bg-background">
@@ -157,18 +158,12 @@ function BookConsultationPage() {
                   <div className="flex h-16 w-16 items-center justify-center rounded-full bg-accent/15">
                     <Mail className="h-8 w-8 text-accent" />
                   </div>
-                  <h2 className="mt-6 text-2xl md:text-3xl">Your email is ready to send</h2>
+                  <h2 className="mt-6 text-2xl md:text-3xl">Request received</h2>
                   <p className="mt-3 max-w-md text-muted-foreground">
-                    Your email client should have opened with your consultation request
-                    pre-filled. If it didn't, email us directly at{" "}
-                    <a
-                      href="mailto:contact.ammcareers@gmail.com"
-                      className="font-medium text-accent underline-offset-4 hover:underline"
-                    >
-                      contact.ammcareers@gmail.com
-                    </a>
-                    .
+                    Thank you! Your consultation request has been received. Our team
+                    will contact you shortly.
                   </p>
+
                   <Link
                     to="/"
                     className="mt-8 inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3.5 text-sm font-semibold text-primary-foreground transition-transform hover:-translate-y-0.5"
@@ -274,17 +269,22 @@ function BookConsultationPage() {
                     />
                   </Field>
 
+                  {error ? (
+                    <p className="text-sm font-medium text-destructive">{error}</p>
+                  ) : null}
+
                   <button
                     type="submit"
-                    className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-primary px-6 py-3.5 text-sm font-semibold text-primary-foreground shadow-lift transition-transform hover:-translate-y-0.5 sm:w-auto sm:px-8"
+                    disabled={loading}
+                    className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-primary px-6 py-3.5 text-sm font-semibold text-primary-foreground shadow-lift transition-transform hover:-translate-y-0.5 disabled:cursor-not-allowed disabled:opacity-70 sm:w-auto sm:px-8"
                   >
                     <Target className="h-4 w-4" />
-                    Request consultation
+                    {loading ? "Sending..." : "Request consultation"}
                   </button>
                   <p className="text-xs text-muted-foreground">
-                    Submitting opens your email app with the details pre-filled and
-                    addressed to AMM Careers.
+                    Your details are sent securely to the AMM Careers team.
                   </p>
+
                 </form>
               )}
             </div>
