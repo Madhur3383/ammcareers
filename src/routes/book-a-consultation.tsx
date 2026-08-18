@@ -275,17 +275,22 @@ function BookConsultationPage() {
                     />
                   </Field>
 
+                  {error ? (
+                    <p className="text-sm font-medium text-destructive">{error}</p>
+                  ) : null}
+
                   <button
                     type="submit"
-                    className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-primary px-6 py-3.5 text-sm font-semibold text-primary-foreground shadow-lift transition-transform hover:-translate-y-0.5 sm:w-auto sm:px-8"
+                    disabled={loading}
+                    className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-primary px-6 py-3.5 text-sm font-semibold text-primary-foreground shadow-lift transition-transform hover:-translate-y-0.5 disabled:cursor-not-allowed disabled:opacity-70 sm:w-auto sm:px-8"
                   >
                     <Target className="h-4 w-4" />
-                    Request consultation
+                    {loading ? "Sending..." : "Request consultation"}
                   </button>
                   <p className="text-xs text-muted-foreground">
-                    Submitting opens your email app with the details pre-filled and
-                    addressed to AMM Careers.
+                    Your details are sent securely to the AMM Careers team.
                   </p>
+
                 </form>
               )}
             </div>
