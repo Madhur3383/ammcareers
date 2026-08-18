@@ -52,42 +52,39 @@ const whatYouGet = [
 
 function BookConsultationPage() {
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+  const submit = useServerFn(submitConsultationRequest);
 
-  function handleSubmit(e: FormEvent<HTMLFormElement>) {
+  async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
     const form = e.currentTarget;
     const data = new FormData(form);
 
-    const name = String(data.get("name") || "").trim();
-    const email = String(data.get("email") || "").trim();
-    const phone = String(data.get("phone") || "").trim();
-    const role = String(data.get("role") || "").trim();
-    const experience = String(data.get("experience") || "").trim();
-    const duration = String(data.get("duration") || "").trim();
-    const locations = String(data.get("locations") || "").trim();
-    const message = String(data.get("message") || "").trim();
-
-    const subject = `Consultation request — ${name || "New candidate"}`;
-    const body = [
-      `Name: ${name}`,
-      `Email: ${email}`,
-      `Phone: ${phone}`,
-      `Target role: ${role}`,
-      `Experience: ${experience}`,
-      `Preferred plan: ${duration}`,
-      `Preferred locations: ${locations}`,
-      "",
-      "Details:",
-      message,
-    ].join("\n");
-
-    const mailto = `mailto:contact.ammcareers@gmail.com?subject=${encodeURIComponent(
-      subject,
-    )}&body=${encodeURIComponent(body)}`;
-
-    window.location.href = mailto;
-    setSubmitted(true);
+    setError(null);
+    setLoading(true);
+    try {
+      await submit({
+        data: {
+          name: String(data.get("name") || "").trim(),
+          email: String(data.get("email") || "").trim(),
+          phone: String(data.get("phone") || "").trim(),
+          role: String(data.get("role") || "").trim(),
+          experience: String(data.get("experience") || "").trim(),
+          duration: String(data.get("duration") || "").trim(),
+          locations: String(data.get("locations") || "").trim(),
+          message: String(data.get("message") || "").trim(),
+        },
+      });
+      setSubmitted(true);
+    } catch (err) {
+      console.error(err);
+      setError("Something went wrong while sending your request. Please try again.");
+    } finally {
+      setLoading(false);
+    }
   }
+
 
   return (
     <div className="min-h-screen bg-background">
