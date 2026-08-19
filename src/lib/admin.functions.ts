@@ -13,7 +13,7 @@ export const getAdminOverview = createServerFn({ method: "GET" })
 
     if (roleError) throw new Error("Could not verify your access.");
 
-    const isAdmin = (roles ?? []).some((r) => r.role === "admin");
+    const isAdmin = (roles ?? []).some((r: { role: string }) => r.role === "admin");
     if (!isAdmin) {
       return { isAdmin: false as const, requests: [] };
     }

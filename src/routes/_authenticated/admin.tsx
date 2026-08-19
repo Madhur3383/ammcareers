@@ -3,7 +3,10 @@ import { useServerFn } from "@tanstack/react-start";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 
 import { supabase } from "@/integrations/supabase/client";
+import type { Tables } from "@/integrations/supabase/types";
 import { getAdminOverview, deleteConsultationRequest } from "@/lib/admin.functions";
+
+type RequestRow = Tables<"consultation_requests">;
 
 export const Route = createFileRoute("/_authenticated/admin")({
   head: () => ({
@@ -46,7 +49,7 @@ function AdminDashboard() {
     onSuccess: () => queryClient.invalidateQueries({ queryKey: ["admin-overview"] }),
   });
 
-  const requests = data?.requests ?? [];
+  const requests: RequestRow[] = (data?.requests ?? []) as RequestRow[];
   const now = Date.now();
   const last7 = requests.filter(
     (r) => now - new Date(r.created_at).getTime() < 7 * 24 * 60 * 60 * 1000,
@@ -129,7 +132,7 @@ function AdminDashboard() {
               </p>
             ) : (
               <div className="mt-8 space-y-4">
-                {requests.map((r) => (
+                {requests.map((r: RequestRow) => (
                   <article key={r.id} className="rounded-2xl border border-border bg-card p-5">
                     <div className="flex flex-wrap items-start justify-between gap-3">
                       <div>
